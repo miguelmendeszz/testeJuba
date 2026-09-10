@@ -1,0 +1,1301 @@
+/* =========================================
+   ESPETINHOS DO JUBA
+   ESTILIZAÇÃO PRINCIPAL
+========================================= */
+
+
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #11100e;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ===== VARIÁVEIS ===== */
+
+:root {
+    --orange: #ff6a00;
+    --orange-light: #ff8c2b;
+    --red: #c92716;
+    --dark: #11100e;
+    --dark-2: #191714;
+    --dark-3: #24201c;
+    --cream: #fff1d6;
+    --gray: #aaa39b;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ===== CONTAINER ===== */
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(15, 14, 12, 0.88);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-fire {
+    font-size: 32px;
+}
+
+.logo strong {
+    display: block;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.logo small {
+    display: block;
+
+    color: var(--orange);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+/* NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--orange);
+}
+
+.nav-button {
+    background: var(--orange);
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    color: #fff !important;
+
+    box-shadow: 0 5px 20px rgba(255, 106, 0, 0.2);
+}
+
+.nav-button:hover {
+    background: var(--orange-light);
+    transform: translateY(-2px);
+}
+
+
+/* MENU MOBILE */
+
+.menu-button {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 760px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(255, 106, 0, 0.22),
+            transparent 30%
+        ),
+        linear-gradient(
+            90deg,
+            #0c0b0a 0%,
+            #15110e 50%,
+            #28150b 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* EFEITO DE BRASA */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    right: -250px;
+    top: 100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 106, 0, 0.35),
+            rgba(255, 106, 0, 0.05) 45%,
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+
+    from {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 9, 8, 0.95),
+            rgba(10, 9, 8, 0.4)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.location-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--orange);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(65px, 9vw, 115px);
+
+    line-height: 0.9;
+
+    letter-spacing: 2px;
+
+    max-width: 750px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--orange);
+
+    text-shadow:
+        0 0 35px rgba(255, 106, 0, 0.2);
+}
+
+.hero p {
+    max-width: 600px;
+
+    margin-top: 30px;
+
+    color: #d0cbc4;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+/* BUTTONS */
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.button-primary {
+    background: var(--orange);
+
+    box-shadow:
+        0 10px 30px rgba(255, 106, 0, 0.22);
+}
+
+.button-primary:hover {
+    background: var(--orange-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(255, 106, 0, 0.3);
+}
+
+.button-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.button-secondary:hover {
+    border-color: var(--orange);
+
+    color: var(--orange);
+
+    transform: translateY(-3px);
+}
+
+
+/* SCROLL */
+
+.scroll-indicator {
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #888;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.scroll-indicator span {
+    color: var(--orange);
+
+    font-size: 20px;
+
+    animation: down 1.5s infinite;
+}
+
+@keyframes down {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.highlights {
+    background: var(--dark-2);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.highlights-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    padding: 25px 0;
+}
+
+.highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.highlight > span {
+    font-size: 30px;
+}
+
+.highlight strong {
+    font-size: 13px;
+}
+
+.highlight p {
+    margin-top: 3px;
+
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.section-title > span,
+.section-label {
+    color: var(--orange);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    margin-top: 12px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(45px, 6vw, 65px);
+
+    line-height: 1;
+}
+
+.section-title h2 strong {
+    color: var(--orange);
+}
+
+.section-title p {
+    max-width: 550px;
+
+    margin: 15px auto 0;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CARDÁPIO
+========================================= */
+
+.menu-section {
+    padding: 110px 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 106, 0, 0.06),
+            transparent 25%
+        );
+}
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.menu-card {
+    position: relative;
+
+    min-height: 275px;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #211e1a,
+            #171512
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.menu-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: -60px;
+    bottom: -60px;
+
+    background: var(--orange);
+
+    opacity: 0.04;
+
+    border-radius: 50%;
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(255, 106, 0, 0.5);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card.featured {
+    border-color:
+        rgba(255, 106, 0, 0.35);
+}
+
+.popular {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    padding: 6px 10px;
+
+    background: var(--orange);
+
+    border-radius: 4px;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.food-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 106, 0, 0.1);
+
+    border: 1px solid
+        rgba(255, 106, 0, 0.15);
+
+    font-size: 28px;
+
+    transition: 0.3s;
+}
+
+.menu-card:hover .food-icon {
+    transform: scale(1.1) rotate(-5deg);
+
+    background:
+        rgba(255, 106, 0, 0.18);
+}
+
+.category {
+    color: var(--orange);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.menu-card h3 {
+    margin-top: 5px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 32px;
+
+    letter-spacing: 0.5px;
+}
+
+.menu-card p {
+    margin-top: 10px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+.about {
+    padding: 110px 0;
+
+    background: #0d0c0a;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+
+/* IMAGEM DECORATIVA */
+
+.about-image {
+    min-height: 500px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 106, 0, 0.22),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #24170e,
+            #120e0a
+        );
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+}
+
+.about-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border: 1px solid
+        rgba(255, 106, 0, 0.25);
+
+    border-radius: 50%;
+}
+
+.about-image::after {
+    content: "ESPETINHOS";
+
+    position: absolute;
+
+    bottom: 35px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 80px;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    letter-spacing: 4px;
+}
+
+.fire-circle {
+    position: relative;
+    z-index: 2;
+
+    font-size: 130px;
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255, 106, 0, 0.5)
+        );
+
+    animation:
+        fireFloat 3s ease-in-out infinite;
+}
+
+@keyframes fireFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+.about-badge {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 30px;
+    left: 30px;
+
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    transform: rotate(-10deg);
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 106, 0, 0.25);
+}
+
+.about-badge strong {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 20px;
+}
+
+.about-badge span {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* TEXTO */
+
+.about-text h2 {
+    margin-top: 15px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(45px, 5vw, 65px);
+
+    line-height: 0.95;
+}
+
+.about-text h2 strong {
+    display: block;
+
+    color: var(--orange);
+}
+
+.about-text p {
+    margin-top: 20px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.about-text p strong {
+    color: #fff;
+}
+
+.about-stats {
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.about-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-stats strong {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 35px;
+
+    color: var(--orange);
+}
+
+.about-stats span {
+    color: var(--gray);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    padding: 65px 0;
+
+    background:
+        linear-gradient(
+            100deg,
+            #7f1d0f,
+            #e44d00
+        );
+}
+
+.cta-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.cta span {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cta h2 {
+    margin-top: 5px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 55px;
+
+    line-height: 0.9;
+}
+
+.cta h2 strong {
+    color: #ffe1bd;
+}
+
+.cta p {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.cta .button {
+    background: #fff;
+
+    color: #b42e0e;
+
+    flex-shrink: 0;
+}
+
+.cta .button:hover {
+    transform: translateY(-3px);
+
+    background: #fff4e7;
+}
+
+
+/* =========================================
+   CONTATO
+========================================= */
+
+.contact {
+    padding: 110px 0;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.contact-card {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    background: var(--dark-2);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(255, 106, 0, 0.4);
+}
+
+.contact-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 25px;
+}
+
+.contact-card p {
+    margin-top: 7px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+.contact-card a {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding-top: 45px;
+
+    background: #090807;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 35px;
+}
+
+.footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-logo > span {
+    font-size: 30px;
+}
+
+.footer-logo strong {
+    display: block;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 24px;
+}
+
+.footer-logo small {
+    color: var(--gray);
+
+    font-size: 10px;
+}
+
+.footer-social a {
+    color: var(--gray);
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--orange);
+}
+
+.copyright {
+    padding: 20px;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   BOTÃO FLUTUANTE
+========================================= */
+
+.floating-button {
+    position: fixed;
+
+    z-index: 900;
+
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    border-radius: 50px;
+
+    background: var(--orange);
+
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.4);
+
+    transition: 0.3s;
+}
+
+.floating-button:hover {
+    transform: translateY(-4px);
+
+    background: var(--orange-light);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        position: absolute;
+
+        top: 82px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background: #11100e;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 10px;
+    }
+
+    .nav-button {
+        text-align: center;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .about-image {
+        min-height: 400px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header-content {
+        height: 70px;
+    }
+
+    .nav {
+        top: 70px;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .menu-section,
+    .about,
+    .contact {
+        padding: 75px 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card {
+        min-height: auto;
+    }
+
+    .about-image {
+        min-height: 330px;
+    }
+
+    .about-image::after {
+        font-size: 45px;
+    }
+
+    .fire-circle {
+        font-size: 90px;
+    }
+
+    .about-stats {
+        gap: 20px;
+    }
+
+    .cta h2 {
+        font-size: 45px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .floating-button {
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
